@@ -1,8 +1,22 @@
 <template>
   <div class="common-layout">
+    <el-backtop :bottom="100">
+      <div style="
+        height: 100%;
+        width: 100%;
+        border-radius: 7px;
+        background-color: var(--el-bg-color-overlay);
+        box-shadow: var(--el-box-shadow-lighter);
+        text-align: center;
+        line-height: 40px;
+        color: #1989fa;
+        font-size: 14px;
+      ">
+        🚀
+      </div>
+    </el-backtop>
     <el-container>
-      <el-header
-        style="
+      <el-header style="
           display: flex;
           align-items: center;
           position: fixed;
@@ -10,14 +24,16 @@
           background-color: white;
           width: 100vw;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-        "
-        ><HeaderView
-      /></el-header>
+        ">
+        <HeaderView />
+      </el-header>
       <el-main style="margin-top: 60px">
         <MainView />
         <!-- <router-view></router-view> -->
       </el-main>
-      <el-footer style="background-color: black; height: 100px"><FooterView /></el-footer>
+      <el-footer style="background-color: black; height: 100px">
+        <FooterView />
+      </el-footer>
     </el-container>
   </div>
 </template>
