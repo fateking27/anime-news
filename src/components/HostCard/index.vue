@@ -1,6 +1,6 @@
 <template>
-    <el-card v-scroll="handleScroll" shadow="never" class="card_3" :body-style="{ padding: '10px' }"
-        :class="{ 'fixed': isFixed }" style="margin-top: 15px; border-radius: 10px; border: none">
+    <el-card ref="myElement" v-scroll="handleScroll" shadow="never" class="card_3" :body-style="{ padding: '10px' }"
+        :class="{ 'fixed': isFixed, 'bottom': isBottom }" style="margin-top: 15px; border-radius: 10px; border: none">
         <div class="title" style="
             display: flex;
             width: 340px;
@@ -101,25 +101,43 @@
 </template>
   
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 const isFixed = ref(false)
+const isBottom = ref(false)
+
+const myElement = ref(null)
 const handleScroll = () => {
+
+    const rect = myElement.value.getBoundingClientRect();
+    const distanceFromBottom = document.documentElement.clientHeight - rect.bottom;
+
+    console.log('元素距离底部的距离:', distanceFromBottom);
     // 获取滚动位置
     const scrollPosition = window.scrollY || document.documentElement.scrollTop;
 
-    // console.log(scrollPosition)
+
     // 设置固定条件，例如滚动到某个位置
     if (scrollPosition > 553) {
         isFixed.value = true;
     } else {
         isFixed.value = false;
     }
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight + 100) {
+        isFixed.value = false;
+        isBottom.value = true;
+    } else {
+        isBottom.value = false;
+    }
 }
 
 onMounted(() => {
     window.addEventListener('scroll', handleScroll)
 })
+
+onUnmounted(() => {
+    //   window.removeEventListener('scroll', handleScroll);
+});
 </script>
   
 <style lang="scss" scoped>
@@ -167,6 +185,50 @@ onMounted(() => {
 .fixed {
     position: fixed;
     top: 50px;
+
+    .items {
+        .first_item {
+            .fir_img {
+                height: 155px;
+                width: 340px;
+                overflow: hidden;
+                margin-top: -40px;
+
+                .el-image {
+                    // margin-top: -40px;
+                    border-radius: 10px;
+                    height: 155px;
+                    width: 340px;
+                    cursor: pointer;
+                    transition: all 0.4s ease-in-out;
+                }
+            }
+
+            .fir_img:hover .el-image {
+                transform: scale(1.1);
+            }
+
+            .title {
+                &:hover+.fir_img .el-image {
+                    transform: scale(1.1);
+                }
+
+                span {
+                    transition: all 0.2s ease-in-out;
+                }
+
+                span:hover {
+                    cursor: pointer;
+                    color: #0b72f8;
+                }
+            }
+        }
+    }
+}
+
+.bottom {
+    position: fixed;
+    bottom: 120px;
 
     .items {
         .first_item {

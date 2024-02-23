@@ -5,7 +5,7 @@
       <span style="color: rgb(252, 91, 91)">.27</span>
     </div>
     <div class="tabs">
-      <div v-for="item in tabs" @click="() => { router.push({ path: item.path, params: { path: item.path } }) }">
+      <div v-for="item in tabs" @click="onTab(item.path)">
         <el-icon size="20" color="#409EFC">
           <component :is="item.icon"></component>
         </el-icon>&nbsp;
@@ -55,6 +55,12 @@ const tabs = [
   { tab: "文章总览", icon: "Files", path: "home" },
   { tab: "关于本站", icon: "Setting", path: "home" }
 ]
+
+const onTab = (path: string) => {
+  router.resolve({ path: path, query: { path: path } })
+  window.open(path, '_blank')
+}
+
 const inputFocus = () => {
   btnDis.opacity = '1'
   refInput.value.focus()
