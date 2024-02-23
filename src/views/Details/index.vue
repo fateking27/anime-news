@@ -4,10 +4,10 @@
             <div class="container">
                 <el-card shadow="never">
                     <template #header>
-                        <div class="card-header" style="background-color: #fc5640;height: 20px;">
+                        <div class="card-header" style="height: 20px;">
                             <el-breadcrumb separator="/" style="line-height: 20px;">
                                 <el-breadcrumb-item :to="{ path: 'home' }">
-                                    <el-icon><HomeFilled /></el-icon>
+                                    <el-icon style="position: relative;top: 2px;"><HomeFilled /></el-icon>
                                     <span>主页</span>
                                 </el-breadcrumb-item>
                                 <el-breadcrumb-item :to="{ path: 'details' }">详情</el-breadcrumb-item>
