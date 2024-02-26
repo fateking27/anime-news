@@ -56,9 +56,8 @@ const tabs = [
   { tab: "关于本站", icon: "Setting", path: "home" }
 ]
 
-const onTab = (path: string) => {
+const onTab = (path:any) => {
   router.push({ path: path, params: { path: path } })
-  // window.open(path, '_blank')
 }
 
 const inputFocus = () => {
