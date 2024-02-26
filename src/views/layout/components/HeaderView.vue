@@ -50,9 +50,8 @@ const inputValue = ref('')
 const refInput = ref()
 const tabs = [
   { tab: "主页", icon: "HomeFilled", path: "home" },
-  { tab: "资讯", icon: "Promotion", path: "details" },
-  { tab: "画廊", icon: "PictureFilled", path: "home" },
-  { tab: "文章总览", icon: "Files", path: "home" },
+  { tab: "每日番组放送", icon: "PictureFilled", path: "home" },
+  { tab: "壁纸福利", icon: "PictureFilled", path: "home" },
   { tab: "关于本站", icon: "Setting", path: "home" }
 ]
 
