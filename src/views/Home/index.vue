@@ -22,7 +22,7 @@
             </div>
             <div class="tabs">
                 <el-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick">
-                    <el-tab-pane label="最新资讯" name="first">
+                    <el-tab-pane v-for="item in tabs" :label="item.name" :name="item.tabname">
                         <div class="items" style="
                   /* background-color: bisque; */
                   width: 100%;
@@ -33,7 +33,7 @@
                   justify-content: space-between;
                   border-bottom: 1px solid rgb(218, 217, 217);
                   padding-bottom: 10px;
-                " v-for="item in 57">
+                " v-for="item in bestnew">
                             <div class="img"
                                 style="cursor: pointer;width: 230px; height: 100%; background-color: darkgrey; border-radius: 10px;margin-right: 20px;">
                                 <el-image style="height: 150px;width: 230px; border-radius: 10px"
@@ -44,29 +44,27 @@
                                         </div>
                                     </template>
                                 </el-image>
-                                <div class="mark_" style="z-index: 8; position: relative; top: -149px; left: 7px;">
+                                <div class="mark_" style="z-index: 1; position: relative; top: -149px; left: 7px;">
                                     <el-tag class="ml-2" size="small" type="info" style="
                         background-color: rgb(29, 27, 27);
                         border: none;
                         opacity: 0.8;
                         color: aliceblue;
-                      ">{{ item == 2 ? '动画' : item == 1 ? 'ACG' : '轻小说' }}</el-tag>
+                      ">{{ item.mark }}</el-tag>
                                 </div>
                             </div>
                             <div class="content" style="width: 600px">
                                 <div class="title" @click="() => { router.push('/details') }">
-                                    <el-text size="large" tag="b" truncated>Aniplex新作动画代号《O》《M》制作决定 物语系列Off＆Monster
-                                        Season</el-text>
+                                    <el-text size="large" tag="b" truncated>{{ item.title }}</el-text>
                                 </div>
                                 <div class="date" style="padding: 5px 0 10px 0">
-                                    <el-text type="info" size="small">时间：2024-2-2</el-text>&nbsp;&nbsp;&nbsp;
+                                    <el-text type="info" size="small">时间：{{ item.tiem }}</el-text>&nbsp;&nbsp;&nbsp;
                                     <el-text type="info" size="small">来源：本站</el-text>&nbsp;&nbsp;&nbsp;
                                     <el-text type="info" size="small">发布：fateking27</el-text>
                                 </div>
                                 <div class="con">
                                     <el-text line-clamp="2">
-                                        Yorushika
-                                        (ヨルシカ、可译作夜鹿）担任电视动画《葬送的芙莉莲》新一期的开场主题曲！1月5日新曲《晴る》（可译作晴朗）将会发布！
+                                        {{ item.content }}
                                     </el-text>
                                 </div>
                                 <div class="mark" style="margin-top: 15px">
@@ -80,8 +78,8 @@
                                 style="border: 1px solid #409efc; color: #409efc">加载更多</el-button>
                         </div>
                     </el-tab-pane>
-                    <el-tab-pane label="动画资讯" name="second">动画资讯</el-tab-pane>
-                    <el-tab-pane label="轻小说资讯" name="third">轻小说资讯</el-tab-pane>
+                    <!-- <el-tab-pane label="动画资讯" name="second">动画资讯</el-tab-pane>
+                    <el-tab-pane label="轻小说资讯" name="third">轻小说资讯</el-tab-pane> -->
                 </el-tabs>
             </div>
         </div>
@@ -132,7 +130,8 @@
   
 <script setup lang="ts">
 import HostCard from '../../components/HostCard/index.vue'
-import { ref } from 'vue'
+import { getCalendar } from '@/api/calendar';
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router';
 const router = useRouter()
 import { RefreshRight } from '@element-plus/icons-vue'
@@ -145,18 +144,57 @@ import Calendar from 'mpvue-calendar'
 import lunar from 'mpvue-calendar/dist/lunar'
 
 const selectModeDate = ref(moment().format('YYYY-M-D'))
-const nowTime = ref(moment().format('YYYY-MM-DD h:mm:ss a'))
-// const nowTime_ = () => {
-//     nowTime.value = moment().format('YYYY-MM-DD h:mm:ss a')
-// }
-
-// setInterval(nowTime_, 1000)
 
 const activeName = ref('first')
+const tabs = ref([
+    { name: '最新资讯', tabname: 'first' },
+    { name: '动画资讯', tabname: 'second' },
+    { name: '轻小说资讯', tabname: 'third' },
+])
+
+const bestnew1 = ref([
+    { title: 'sssssss', content: 'ssssss', tiem: '2022-12-01', mark: '轻小说' },
+    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画' },
+    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画' },
+    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
+])
+
+const bestnew2 = ref([
+    { title: 'sssrrrrrssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画' },
+    { title: 'wwwww', content: 'ssssss', tiem: '2024-12-01', mark: '动画' },
+    { title: 'ssswwwwwssss', content: 'ssssss', tiem: '4654-12-01', mark: '动画' },
+    { title: 'fffff', content: 'ssssss', tiem: '2024-12-77', mark: '动画' },
+])
+
+const bestnew3 = ref([
+    { title: 'aaaa', content: 'ssssss', tiem: '5678-12-01', mark: '轻小说' },
+    { title: 'aaa', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
+    { title: 'ssssaaaasss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
+    { title: 'ddddd', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
+])
+
+let bestnew = bestnew1.value
 
 const handleClick = (tab: TabsPaneContext, event: Event) => {
-    console.log(tab, event)
+    // console.log(tab.props.label, event)
+    tab.props.label == '最新资讯' ?
+        bestnew = bestnew1.value :
+        tab.props.label == '动画资讯' ?
+            bestnew = bestnew2.value :
+            tab.props.label == '轻小说资讯' ?
+                bestnew = bestnew3.value :
+                null
+    console.log(bestnew)
 }
+
+const calendar = async () => {
+    const { data } = await getCalendar()
+    console.log(data)
+}
+
+onMounted(() => {
+    calendar()
+})
 </script>
   
 <style lang="scss" scoped>

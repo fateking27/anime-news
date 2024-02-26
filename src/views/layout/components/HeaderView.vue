@@ -42,7 +42,7 @@
 
 <script setup lang="ts">
 import { Search } from '@element-plus/icons-vue'
-import { ref, reactive, onMounted} from 'vue'
+import { ref, reactive} from 'vue'
 import { useRouter } from 'vue-router';
 const router = useRouter()
 const btnDis = reactive({ opacity: '0' })
@@ -71,10 +71,6 @@ const inputBlur = () => {
     btnDis.opacity = '0'
   }
 }
-
-onMounted(()=>{
-  inputFocus()
-})
 </script>
 
 <style lang="scss" scoped>
