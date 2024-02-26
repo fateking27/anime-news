@@ -275,7 +275,7 @@ onMounted(() => {
     }
 
     .left {
-        height: 100vh;
+        // height: 100vh;
         // background-color: cadetblue;
         width: 28.5%;
 

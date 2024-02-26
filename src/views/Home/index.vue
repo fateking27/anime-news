@@ -33,7 +33,7 @@
                   justify-content: space-between;
                   border-bottom: 1px solid rgb(218, 217, 217);
                   padding-bottom: 10px;
-                " v-for="item in 7">
+                " v-for="item in 57">
                             <div class="img"
                                 style="cursor: pointer;width: 230px; height: 100%; background-color: darkgrey; border-radius: 10px;margin-right: 20px;">
                                 <el-image style="height: 150px;width: 230px; border-radius: 10px"
@@ -54,7 +54,7 @@
                                 </div>
                             </div>
                             <div class="content" style="width: 600px">
-                                <div class="title">
+                                <div class="title" @click="() => { router.push('/details') }">
                                     <el-text size="large" tag="b" truncated>Aniplex新作动画代号《O》《M》制作决定 物语系列Off＆Monster
                                         Season</el-text>
                                 </div>
@@ -133,6 +133,8 @@
 <script setup lang="ts">
 import HostCard from '../../components/HostCard/index.vue'
 import { ref } from 'vue'
+import { useRouter } from 'vue-router';
+const router = useRouter()
 import { RefreshRight } from '@element-plus/icons-vue'
 import { Picture as IconPicture } from '@element-plus/icons-vue'
 import type { TabsPaneContext } from 'element-plus'
@@ -144,11 +146,11 @@ import lunar from 'mpvue-calendar/dist/lunar'
 
 const selectModeDate = ref(moment().format('YYYY-M-D'))
 const nowTime = ref(moment().format('YYYY-MM-DD h:mm:ss a'))
-const nowTime_ = () => {
-    nowTime.value = moment().format('YYYY-MM-DD h:mm:ss a')
-}
+// const nowTime_ = () => {
+//     nowTime.value = moment().format('YYYY-MM-DD h:mm:ss a')
+// }
 
-setInterval(nowTime_, 1000)
+// setInterval(nowTime_, 1000)
 
 const activeName = ref('first')
 
@@ -240,7 +242,7 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
     }
 
     .left {
-        height: 100vh;
+        // height: 100vh;
         // background-color: cadetblue;
         width: 28.5%;
 

@@ -20,7 +20,7 @@
           display: flex;
           align-items: center;
           position: fixed;
-          z-index: 9;
+          z-index: 99;
           background-color: white;
           width: 100vw;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
@@ -31,7 +31,7 @@
         <MainView />
         <!-- <router-view></router-view> -->
       </el-main>
-      <el-footer style="background-color: black; height: 100px">
+      <el-footer style="background-color: black; height: 95px;z-index: 1;">
         <FooterView />
       </el-footer>
     </el-container>

@@ -15,10 +15,10 @@
     <div class="label">
       <div class="search">
         <label class="label13">
-          <input v-model="inputValue" class="inp13" type="text" required @blur="inputBlur()" ref="refInput" />
+          <input style="font-size: 13px;" v-model="inputValue" class="inp13" type="text" required @blur="inputBlur()" ref="refInput" />
           <span class="line13"> </span>
         </label>
-        <el-button @click="inputFocus()" type="text" :style="btnDis" :icon="Search" circle />
+          <el-button @click="inputFocus()" type="text" :style="btnDis" :icon="Search" circle />
       </div>
       <!-- <div class="login" style="margin-left: 20px; margin-top: -5px">
         <button
@@ -42,7 +42,7 @@
 
 <script setup lang="ts">
 import { Search } from '@element-plus/icons-vue'
-import { ref, reactive } from 'vue'
+import { ref, reactive, onMounted} from 'vue'
 import { useRouter } from 'vue-router';
 const router = useRouter()
 const btnDis = reactive({ opacity: '0' })
@@ -57,8 +57,8 @@ const tabs = [
 ]
 
 const onTab = (path: string) => {
-  router.resolve({ path: path, query: { path: path } })
-  window.open(path, '_blank')
+  router.push({ path: path, params: { path: path } })
+  // window.open(path, '_blank')
 }
 
 const inputFocus = () => {
@@ -72,6 +72,10 @@ const inputBlur = () => {
     btnDis.opacity = '0'
   }
 }
+
+onMounted(()=>{
+  inputFocus()
+})
 </script>
 
 <style lang="scss" scoped>
@@ -116,7 +120,7 @@ const inputBlur = () => {
 
   .label {
     position: absolute;
-    right: 19vw;
+    right: 50px;
     top: 15px;
     display: flex;
 
@@ -161,7 +165,7 @@ const inputBlur = () => {
 
     .inp13:focus,
     .inp13:valid {
-      width: 180px;
+      width: 220px;
       height: 30px;
     }
 

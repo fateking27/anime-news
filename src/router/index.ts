@@ -21,7 +21,15 @@ const router = createRouter({
         },
       ]
     }
-  ]
+  ],
+  //打开新页面跳回页面顶部
+  scrollBehavior (to, from, savedPosition) {
+    if(savedPosition){
+      return savedPosition
+    }else{
+      return {top: 0}
+    }
+  }
 })
 
 export default router
