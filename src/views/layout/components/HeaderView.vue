@@ -51,7 +51,7 @@ const refInput = ref()
 const tabs = [
   { tab: "主页", icon: "HomeFilled", path: "home" },
   { tab: "每日番组放送", icon: "PictureFilled", path: "home" },
-  { tab: "壁纸福利", icon: "PictureFilled", path: "home" },
+  { tab: "壁纸福利", icon: "PictureFilled", path: "photo" },
   { tab: "关于本站", icon: "Setting", path: "home" }
 ]
 

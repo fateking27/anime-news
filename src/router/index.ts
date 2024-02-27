@@ -20,6 +20,11 @@ const router = createRouter({
           component: () => import('@/views/Details/index.vue')
         },
         {
+          path: 'photo',
+          name: 'Photo',
+          component: () => import('@/views/Photo/index.vue')
+        },
+        {
           path: '/404',
           name: 'NotFound',
           component: () => import('@/views/NotFound404/index.vue')
