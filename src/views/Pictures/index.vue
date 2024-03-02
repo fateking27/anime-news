@@ -31,16 +31,16 @@
 
 <script setup lang='ts'>
 const urls = [
-    'http://8.138.83.140/files/Pictures/d2b16369ff6d111452e55090590c6a70.jpg',
-    'http://8.138.83.140/files/Pictures/e3fca56d96308eb5d22bcad998c20454.jpg',
-    'http://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg',
-    'http://8.138.83.140/files/Pictures/5dbe718f322cae8dbdeb50645c3f7365.jpg',
-    'http://8.138.83.140/files/Pictures/91bb2b7ccc1475bd0fe2f91ab212048c.jpg',
-    'http://8.138.83.140/files/Pictures/947b048dbef6022399f384591bddcf73.jpg',
-    'http://8.138.83.140/files/Pictures/975d6a3b04f5797e2cf81fef10681d90.jpg',
-    'http://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg',
-    'http://8.138.83.140/files/Pictures/d2b16369ff6d111452e55090590c6a70.jpg',
-    'http://8.138.83.140/files/Pictures/GGO8BnUWMAAoqyw.jpg',
+    'https://8.138.83.140/files/Pictures/d2b16369ff6d111452e55090590c6a70.jpg',
+    'https://8.138.83.140/files/Pictures/e3fca56d96308eb5d22bcad998c20454.jpg',
+    'https://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg',
+    'https://8.138.83.140/files/Pictures/5dbe718f322cae8dbdeb50645c3f7365.jpg',
+    'https://8.138.83.140/files/Pictures/91bb2b7ccc1475bd0fe2f91ab212048c.jpg',
+    'https://8.138.83.140/files/Pictures/947b048dbef6022399f384591bddcf73.jpg',
+    'https://8.138.83.140/files/Pictures/975d6a3b04f5797e2cf81fef10681d90.jpg',
+    'https://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg',
+    'https://8.138.83.140/files/Pictures/d2b16369ff6d111452e55090590c6a70.jpg',
+    'https://8.138.83.140/files/Pictures/GGO8BnUWMAAoqyw.jpg',
 ]
 </script>
 
