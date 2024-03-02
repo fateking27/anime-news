@@ -1,5 +1,5 @@
 <template>
-    <el-card ref="myElement" v-scroll="handleScroll" shadow="never" class="card_3" :body-style="{ padding: '10px' }"
+    <el-card ref="myElement" v-scroll="handleScroll" class="card_3" :body-style="{ padding: '10px' }"
         :class="{ 'fixed': isFixed, 'bottom': isBottom }" style="margin-top: 15px; border-radius: 10px; border: none">
         <div class="title" style="
             display: flex;

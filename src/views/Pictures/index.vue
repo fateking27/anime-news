@@ -9,8 +9,9 @@
             </div>
             <div class="container">
                 <div class="card" v-for="item in urls" :key="item">
-                    <div class="img" style="width: 100%;height: 225px;background-color: aliceblue;">
-                        <el-image style="width: 100%;height: 100%;border-radius: 10px 10px 0 0;" :src="item" fit="cover" />
+                    <div class="img" style="width: 100%;height: 225px;border-radius: 10px 10px 0 0;">
+                        <el-image style="width: 100%;height: 100%;border-radius: 10px 10px 0 0;" :src="item"
+                            fit="cover" />
                     </div>
                     <div class="title">
                         <div>
@@ -32,7 +33,7 @@
 <script setup lang='ts'>
 const urls = [
     'https://8.138.83.140/files/Pictures/d2b16369ff6d111452e55090590c6a70.jpg',
-    'https://8.138.83.140/files/Pictures/e3fca56d96308eb5d22bcad998c20454.jpg',
+    // 'https://8.138.83.140/files/Pictures/e3fca56d96308eb5d22bcad998c20454.jpg',
     'https://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg',
     'https://8.138.83.140/files/Pictures/5dbe718f322cae8dbdeb50645c3f7365.jpg',
     'https://8.138.83.140/files/Pictures/91bb2b7ccc1475bd0fe2f91ab212048c.jpg',
@@ -81,7 +82,7 @@ const urls = [
         .container {
             width: 100%;
             // background-color: aquamarine;
-            margin-top: 15px;
+            margin-top: 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
@@ -93,6 +94,14 @@ const urls = [
                 background-color: white;
                 border-radius: 10px;
                 margin-bottom: 20px;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    cursor: pointer;
+                    transform: translate(0, -3px);
+                    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 30px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+                }
 
                 .title {
                     width: 95%;

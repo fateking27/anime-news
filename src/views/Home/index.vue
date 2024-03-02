@@ -20,7 +20,7 @@
                     </el-image>
                 </div>
             </div>
-            <div class="tabs">
+            <div class="tabs" style="box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;">
                 <el-tabs v-model="activeName" class="demo-tabs" @tab-click="handleClick">
                     <el-tab-pane v-for="item in tabs" :label="item.name" :name="item.tabname">
                         <div class="items" style="
@@ -84,7 +84,7 @@
             </div>
         </div>
         <div class="left">
-            <el-card class="card_1" shadow="never" :body-style="{ padding: '10px' }">
+            <el-card class="card_1" :body-style="{ padding: '10px' }">
                 <div class="card-body" style="width: auto; display: flex">
                     <div class="useimg" style="height: auto; display: flex; align-items: center">
                         <el-avatar :size="45"
@@ -96,7 +96,7 @@
                     </div>
                 </div>
             </el-card>
-            <el-card class="card_2" shadow="never" :body-style="{ padding: '0px' }" style="margin-top: 15px; border: none">
+            <el-card class="card_2" :body-style="{ padding: '0px' }" style="margin-top: 15px; border: none">
                 <div class="title">
                     <div style="
               font-size: 27px;
