@@ -14,9 +14,9 @@
                             fit="cover" />
                     </div>
                     <div class="title">
-                        <div>
-                            <el-text size="large" tag="b" truncated>
-                                动漫电脑壁纸 Vol. 001
+                        <div style="height: 40px;">
+                            <el-text size="large" tag="b" line-clamp="2">
+                                剧场动画《OVERLORD 圣王国篇》新视觉图公开
                             </el-text>
                         </div>
                     </div>
@@ -104,7 +104,7 @@ const urls = [
                 }
 
                 .title {
-                    width: 95%;
+                    width: 90%;
                     margin: auto;
                     margin-top: 20px;
 
@@ -120,7 +120,7 @@ const urls = [
                     // margin-top: 10px;
                     margin-right: 20px;
                     position: relative;
-                    top: 20px;
+                    top: 7px;
                 }
             }
         }

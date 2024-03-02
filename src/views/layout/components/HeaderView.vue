@@ -52,11 +52,12 @@ const tabs = [
   { tab: "主页", icon: "HomeFilled", path: "home" },
   { tab: "每日番组放送", icon: "PictureFilled", path: "home" },
   { tab: "壁纸福利", icon: "PictureFilled", path: "pictures" },
+  { tab: "资源下载", icon: "PictureFilled", path: "pictures" },
   { tab: "关于本站", icon: "Setting", path: "home" }
 ]
 
 const onTab = (path:any) => {
-  router.push({ path: path, params: { path: path } })
+  router.push({ path: path, query: { path: path } })
 }
 
 const inputFocus = () => {
