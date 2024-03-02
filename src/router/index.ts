@@ -20,9 +20,9 @@ const router = createRouter({
           component: () => import('@/views/Details/index.vue')
         },
         {
-          path: 'photo',
-          name: 'Photo',
-          component: () => import('@/views/Photo/index.vue')
+          path: 'pictures',
+          name: 'Pictures',
+          component: () => import('@/views/Pictures/index.vue')
         },
         {
           path: '/404',

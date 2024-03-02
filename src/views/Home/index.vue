@@ -153,9 +153,13 @@ const tabs = ref([
 ])
 
 const bestnew1 = ref([
-    { title: 'sssssss', content: 'ssssss', tiem: '2022-12-01', mark: '轻小说' },
+    { title: 'ssssssskkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkklllllllllllllllllllllllllllllllllllllllllllllllllkk', content: 'ssssss', tiem: '2022-12-01', mark: '轻小说' },
     { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画' },
     { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画' },
+    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
+    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
+    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
+    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
     { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
 ])
 
