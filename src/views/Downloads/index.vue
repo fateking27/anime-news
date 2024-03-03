@@ -4,7 +4,7 @@
             <div class="top">
                 <div>
                     <div style="color: darkgray;">—— CATEGORY ——</div>
-                    <div>壁纸福利</div>
+                    <div>资源下载</div>
                 </div>
             </div>
             <div class="container">

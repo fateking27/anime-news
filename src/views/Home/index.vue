@@ -3,15 +3,15 @@
         <div class="right">
             <div class="carousel" style="width: 100%">
                 <el-carousel :interval="5000" style="border-radius: 10px; height: 100%">
-                    <el-carousel-item v-for="item in 4" :key="item">
-                        <h3 text="2xl" justify="center">{{ item }}</h3>
+                    <el-carousel-item v-for="item in urls" :key="item">
+                        <!-- <h3 text="2xl" justify="center">{{ item }}</h3> -->
+                        <el-image :src="item" fit="cover"></el-image>
                     </el-carousel-item>
                 </el-carousel>
             </div>
             <div class="showImg">
-                <div class="item" v-for="i in 4">
-                    <el-image
-                        src="https://www.timelogs.cn/wp-content/uploads/2023/10/%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB%E5%BF%AB%E8%AE%AF.webp">
+                <div class="item" v-for="i in urls">
+                    <el-image :src="i">
                         <template #error>
                             <div class="image-slot">
                                 <el-icon><icon-picture /></el-icon>
@@ -36,8 +36,8 @@
                 " v-for="item in bestnew">
                             <div class="img"
                                 style="cursor: pointer;width: 230px; height: 100%; background-color: darkgrey; border-radius: 10px;margin-right: 20px;">
-                                <el-image style="height: 150px;width: 230px; border-radius: 10px"
-                                    src="https://www.timelogs.cn/wp-content/uploads/2023/10/%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB%E5%BF%AB%E8%AE%AF.webp">
+                                <el-image style="height: 150px;width: 230px; border-radius: 10px" :src="item.img">
+
                                     <template #error>
                                         <div class="image-slot">
                                             <el-icon><icon-picture /></el-icon>
@@ -120,14 +120,14 @@
                         <div style="color: white; font-size: 47px">{{ moment().format('DD') }}</div>
                     </div>
                 </div>
-                <Calendar style="width: 100%" monFirst :lunar="lunar" backgroundText class-name="select-mode" language="cn"
-                    :select-date="selectModeDate" />
+                <Calendar style="width: 100%" monFirst :lunar="lunar" backgroundText class-name="select-mode"
+                    language="cn" :select-date="selectModeDate" />
             </el-card>
             <HostCard />
         </div>
     </div>
 </template>
-  
+
 <script setup lang="ts">
 import HostCard from '../../components/HostCard/index.vue'
 import { getCalendar } from '@/api/calendar';
@@ -147,41 +147,45 @@ const selectModeDate = ref(moment().format('YYYY-M-D'))
 
 const activeName = ref('first')
 const tabs = ref([
-    { name: '最新资讯', tabname: 'first' },
+    { name: '最新文章', tabname: 'first' },
     { name: '动画资讯', tabname: 'second' },
     { name: '轻小说资讯', tabname: 'third' },
 ])
 
+const urls = [
+    'https://8.138.83.140/files/Pictures/d2b16369ff6d111452e55090590c6a70.jpg',
+    'https://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg',
+    'https://8.138.83.140/files/Pictures/5dbe718f322cae8dbdeb50645c3f7365.jpg',
+    'https://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg',
+]
+
 const bestnew1 = ref([
-    { title: 'ssssssskkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkklllllllllllllllllllllllllllllllllllllllllllllllllkk', content: 'ssssss', tiem: '2022-12-01', mark: '轻小说' },
-    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画' },
-    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画' },
-    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
-    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
-    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
-    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
-    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
+    { title: 'ssssssskkkkkkk', content: 'ssssss', tiem: '2022-12-01', mark: '轻小说', img: 'https://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg' },
+    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画', img: 'https://8.138.83.140/files/Pictures/5dbe718f322cae8dbdeb50645c3f7365.jpg' },
+    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画', img: 'https://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg' },
+    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: 'https://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg' },
+    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: 'https://8.138.83.140/files/Pictures/d2b16369ff6d111452e55090590c6a70.jpg' },
 ])
 
 const bestnew2 = ref([
-    { title: 'sssrrrrrssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画' },
-    { title: 'wwwww', content: 'ssssss', tiem: '2024-12-01', mark: '动画' },
-    { title: 'ssswwwwwssss', content: 'ssssss', tiem: '4654-12-01', mark: '动画' },
-    { title: 'fffff', content: 'ssssss', tiem: '2024-12-77', mark: '动画' },
+    { title: 'sssrrrrrssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画', img: 'https://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg' },
+    { title: 'wwwww', content: 'ssssss', tiem: '2024-12-01', mark: '动画', img: 'https://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg' },
+    { title: 'ssswwwwwssss', content: 'ssssss', tiem: '4654-12-01', mark: '动画', img: 'https://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg' },
+    { title: 'fffff', content: 'ssssss', tiem: '2024-12-77', mark: '动画', img: 'https://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg' },
 ])
 
 const bestnew3 = ref([
-    { title: 'aaaa', content: 'ssssss', tiem: '5678-12-01', mark: '轻小说' },
-    { title: 'aaa', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
-    { title: 'ssssaaaasss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
-    { title: 'ddddd', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说' },
+    { title: 'aaaa', content: 'ssssss', tiem: '5678-12-01', mark: '轻小说', img: 'https://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg' },
+    { title: 'aaa', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: 'https://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg' },
+    { title: 'ssssaaaasss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: 'https://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg' },
+    { title: 'ddddd', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: 'https://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg' },
 ])
 
 let bestnew = bestnew1.value
 
 const handleClick = (tab: TabsPaneContext, event: Event) => {
     // console.log(tab.props.label, event)
-    tab.props.label == '最新资讯' ?
+    tab.props.label == '最新文章' ?
         bestnew = bestnew1.value :
         tab.props.label == '动画资讯' ?
             bestnew = bestnew2.value :
@@ -200,7 +204,7 @@ onMounted(() => {
     calendar()
 })
 </script>
-  
+
 <style lang="scss" scoped>
 .main {
     display: flex;
@@ -343,4 +347,3 @@ onMounted(() => {
     background-color: #d3dce6;
 }
 </style>
-  

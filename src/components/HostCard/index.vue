@@ -18,7 +18,7 @@
               border-radius: 50%;
               margin-left: 5px;
             "></div>
-            <div style="font-size: 20px; font-weight: 600; margin-left: 7px">近期必看</div>
+            <div style="font-size: 20px; font-weight: 600; margin-left: 7px">随便看看</div>
         </div>
         <div class="items">
             <div class="first_item" style="
@@ -109,27 +109,27 @@ const isBottom = ref(false)
 const myElement = ref()
 const handleScroll = () => {
     // 获取滚动位置
-    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    // const scrollPosition = window.scrollY || document.documentElement.scrollTop;
     // console.log(scrollPosition)
     // console.log(document.body.offsetHeight)
 
     // 设置固定条件，例如滚动到某个位置
-    if (scrollPosition > 553) {
-        isFixed.value = true;
-    } else {
-        isFixed.value = false;
-    }
+    // if (scrollPosition > 553) {
+    //     isFixed.value = true;
+    // } else {
+    //     isFixed.value = false;
+    // }
 }
 
 onMounted(() => {
-    window.addEventListener('scroll', handleScroll)
-    handleScroll()
+    // window.addEventListener('scroll', handleScroll)
+    // handleScroll()
     
     
 })
 
 onUnmounted(() => {
-      window.removeEventListener('scroll', handleScroll);
+    //   window.removeEventListener('scroll', handleScroll);
 });
 </script>
   

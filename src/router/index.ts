@@ -25,6 +25,11 @@ const router = createRouter({
           component: () => import('@/views/Pictures/index.vue')
         },
         {
+          path: 'downloads',
+          name: 'Downloads',
+          component: () => import('@/views/Downloads/index.vue')
+        },
+        {
           path: '/404',
           name: 'NotFound',
           component: () => import('@/views/NotFound404/index.vue')

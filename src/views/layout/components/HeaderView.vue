@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" style="background-color: #3b4675;">
     <div class="title">
       <span style="color: rgb(92, 185, 221)">F.K</span>
       <span style="color: rgb(252, 91, 91)">.27</span>
@@ -52,8 +52,8 @@ const tabs = [
   { tab: "主页", icon: "HomeFilled", path: "home" },
   { tab: "每日番组放送", icon: "PictureFilled", path: "home" },
   { tab: "壁纸福利", icon: "PictureFilled", path: "pictures" },
-  { tab: "资源下载", icon: "PictureFilled", path: "pictures" },
-  { tab: "关于本站", icon: "Setting", path: "home" }
+  { tab: "ACGN资讯速报", icon: "Promotion", path: "pictures" },
+  { tab: "资源下载", icon: "Download", path: "downloads" }
 ]
 
 const onTab = (path:any) => {
@@ -95,8 +95,8 @@ const inputBlur = () => {
     margin-left: 20px;
 
     div {
-      color: black;
-      font-family: 'YouYuan';
+      color: rgb(255, 255, 255);
+      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       font-weight: 600;
       transition: color 0.3s linear 0s;
       margin-left: 20px;

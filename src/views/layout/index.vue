@@ -21,7 +21,7 @@
           align-items: center;
           position: fixed;
           z-index: 99;
-          background-color: white;
+          background-color:#3b4675;
           width: 100vw;
           box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
         ">
@@ -67,5 +67,4 @@ import FooterView from './components/FooterView.vue'
 //   100% {
 //     background-position: 0% 50%;
 //   }
-// }
-</style>
+// }</style>
