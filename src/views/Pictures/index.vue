@@ -29,14 +29,14 @@
                 <el-pagination background layout="prev, pager, next" :total="100" />
             </div>
         </div>
-        <div class="left"></div>
+        <div class="left">
+        </div>
     </div>
 </template>
 
 <script setup lang='ts'>
 const urls = [
     'https://8.138.83.140/files/Pictures/d2b16369ff6d111452e55090590c6a70.jpg',
-    // 'https://8.138.83.140/files/Pictures/e3fca56d96308eb5d22bcad998c20454.jpg',
     'https://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg',
     'https://8.138.83.140/files/Pictures/5dbe718f322cae8dbdeb50645c3f7365.jpg',
     'https://8.138.83.140/files/Pictures/91bb2b7ccc1475bd0fe2f91ab212048c.jpg',
@@ -128,7 +128,8 @@ const urls = [
                 }
             }
         }
-        .pagination{
+
+        .pagination {
             width: 100%;
             display: flex;
             justify-content: center;
