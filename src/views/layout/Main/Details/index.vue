@@ -110,7 +110,7 @@
                 </el-card>
             </div>
         </div>
-        <div class="left">
+        <!-- <div class="left">
             <el-card class="card_1" shadow="never" :body-style="{ padding: '10px' }">
                 <div class="card-body" style="width: auto; display: flex">
                     <div class="useimg" style="height: auto; display: flex; align-items: center">
@@ -151,20 +151,20 @@
                     :select-date="selectModeDate" />
             </el-card>
             <HostCard/>
-        </div>
+        </div> -->
     </div>
 </template>
   
 <script setup lang="ts">
-import HostCard from '../../components/HostCard/index.vue'
+// import HostCard from '../../../../components/HostCard/index.vue'
 import { ref, onMounted } from 'vue'
 import moment from 'moment'
 //@ts-ignore 忽略当前文件ts类型的检测否则有红色提示(打包会失败)
-import Calendar from 'mpvue-calendar'
+// import Calendar from 'mpvue-calendar'
 //@ts-ignore
-import lunar from 'mpvue-calendar/dist/lunar'
+// import lunar from 'mpvue-calendar/dist/lunar'
 
-const selectModeDate = ref(moment().format('YYYY-M-D'))
+// const selectModeDate = ref(moment().format('YYYY-M-D'))
 
 
 const isFixed = ref(false)

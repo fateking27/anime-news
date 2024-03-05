@@ -5,7 +5,7 @@
                 <el-carousel :interval="5000" style="border-radius: 10px; height: 100%">
                     <el-carousel-item v-for="item in urls" :key="item">
                         <!-- <h3 text="2xl" justify="center">{{ item }}</h3> -->
-                        <el-image :src="item" fit="cover"></el-image>
+                        <el-image :src="item" fit="cover" style="height: 100%;width: 100%;"></el-image>
                     </el-carousel-item>
                 </el-carousel>
             </div>
@@ -83,53 +83,11 @@
                 </el-tabs>
             </div>
         </div>
-        <div class="left">
-            <el-card class="card_1" :body-style="{ padding: '10px' }">
-                <div class="card-body" style="width: auto; display: flex">
-                    <div class="useimg" style="height: auto; display: flex; align-items: center">
-                        <el-avatar :size="45"
-                            src="https://dlink.host/sharepoint/aHR0cHM6Ly95dW53dTI3LW15LnNoYXJlcG9pbnQuY29tLzppOi9nL3BlcnNvbmFsL2ZhdGVraW5nMjdfeXVud3UyN19vbm1pY3Jvc29mdF9jb20vRVpuLVNTZjR6QzVQck1NbkNaWWJnSmdCZ0tPanl0VHZwNzRvN2F2eGhHUzVFdz9lPTliTlM0Zg.jpg" />
-                    </div>
-                    <div style="padding-left: 10px; color: white; font-size: 13px; font-family: 'YouYuan'">
-                        <div style="font-size: 17px; padding-bottom: 5px">Fateking27站长</div>
-                        <div>我们一日日度过的所谓日常，其实可能是连续不断的奇迹----《日常》</div>
-                    </div>
-                </div>
-            </el-card>
-            <el-card class="card_2" :body-style="{ padding: '0px' }" style="margin-top: 15px; border: none">
-                <div class="title">
-                    <div style="
-              font-size: 27px;
-              font-weight: 600;
-              color: white;
-              text-align: center;
-              line-height: 70px;
-              height: 70px;
-              width: 70px;
-              padding-left: 10px;
-            ">
-                        日历
-                    </div>
-                    <div class="todoy" style="display: flex; padding-right: 17px">
-                        <div style="padding-right: 10px">
-                            <div style="color: white; font-size: 20px; text-align: right">
-                                {{ moment().format('MMM') }}
-                            </div>
-                            <div style="color: white; font-size: 24px">{{ moment().format('dddd') }}</div>
-                        </div>
-                        <div style="color: white; font-size: 47px">{{ moment().format('DD') }}</div>
-                    </div>
-                </div>
-                <Calendar style="width: 100%" monFirst :lunar="lunar" backgroundText class-name="select-mode"
-                    language="cn" :select-date="selectModeDate" />
-            </el-card>
-            <HostCard />
-        </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import HostCard from '../../components/HostCard/index.vue'
+// import HostCard from '../../components/HostCard/index.vue'
 import { getCalendar } from '@/api/calendar';
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router';
@@ -137,48 +95,48 @@ const router = useRouter()
 import { RefreshRight } from '@element-plus/icons-vue'
 import { Picture as IconPicture } from '@element-plus/icons-vue'
 import type { TabsPaneContext } from 'element-plus'
-import moment from 'moment'
+// import moment from 'moment'
 //@ts-ignore 忽略当前文件ts类型的检测否则有红色提示(打包会失败)
-import Calendar from 'mpvue-calendar'
+// import Calendar from 'mpvue-calendar'
 //@ts-ignore
-import lunar from 'mpvue-calendar/dist/lunar'
+// import lunar from 'mpvue-calendar/dist/lunar'
 
-const selectModeDate = ref(moment().format('YYYY-M-D'))
+// const selectModeDate = ref(moment().format('YYYY-M-D'))
 
 const activeName = ref('first')
 const tabs = ref([
     { name: '最新文章', tabname: 'first' },
-    { name: '动画资讯', tabname: 'second' },
-    { name: '轻小说资讯', tabname: 'third' },
+    { name: '动画相关', tabname: 'second' },
+    { name: '轻小说相关', tabname: 'third' },
 ])
 
 const urls = [
-    'https://8.138.83.140/files/Pictures/d2b16369ff6d111452e55090590c6a70.jpg',
-    'https://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg',
-    'https://8.138.83.140/files/Pictures/5dbe718f322cae8dbdeb50645c3f7365.jpg',
-    'https://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg',
+    'https://dlink.host/wx1.sinaimg.cn/large/008sKYvhly8hng1dr6pnej31cf0u07da.jpg',
+    'https://dlink.host/wx3.sinaimg.cn/large/008sKYvhly8hng1fjrq8aj31hc0u07di.jpg',
+    'https://dlink.host/wx3.sinaimg.cn/large/008sKYvhly8hng1fdo4vhj316k0u0tk7.jpg',
+    'https://dlink.host/wx3.sinaimg.cn/large/008sKYvhly8hng1fbof9fj30u016q7df.jpg',
 ]
 
 const bestnew1 = ref([
-    { title: 'ssssssskkkkkkk', content: 'ssssss', tiem: '2022-12-01', mark: '轻小说', img: 'https://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg' },
-    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画', img: 'https://8.138.83.140/files/Pictures/5dbe718f322cae8dbdeb50645c3f7365.jpg' },
-    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画', img: 'https://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg' },
-    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: 'https://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg' },
-    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: 'https://8.138.83.140/files/Pictures/d2b16369ff6d111452e55090590c6a70.jpg' },
+    { title: 'ssssssskkkkkkk', content: 'ssssss', tiem: '2022-12-01', mark: '轻小说', img: `${urls[0]}` },
+    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画', img: `${urls[1]}` },
+    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画', img: `${urls[2]}` },
+    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: `${urls[3]}` },
+    { title: 'sssssss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: `${urls[0]}` },
 ])
 
 const bestnew2 = ref([
-    { title: 'sssrrrrrssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画', img: 'https://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg' },
-    { title: 'wwwww', content: 'ssssss', tiem: '2024-12-01', mark: '动画', img: 'https://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg' },
-    { title: 'ssswwwwwssss', content: 'ssssss', tiem: '4654-12-01', mark: '动画', img: 'https://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg' },
-    { title: 'fffff', content: 'ssssss', tiem: '2024-12-77', mark: '动画', img: 'https://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg' },
+    { title: 'sssrrrrrssss', content: 'ssssss', tiem: '2024-12-01', mark: '动画', img: `${urls[2]}` },
+    { title: 'wwwww', content: 'ssssss', tiem: '2024-12-01', mark: '动画', img: `${urls[3]}` },
+    { title: 'ssswwwwwssss', content: 'ssssss', tiem: '4654-12-01', mark: '动画', img: `${urls[0]}` },
+    { title: 'fffff', content: 'ssssss', tiem: '2024-12-77', mark: '动画', img: `${urls[1]}` },
 ])
 
 const bestnew3 = ref([
-    { title: 'aaaa', content: 'ssssss', tiem: '5678-12-01', mark: '轻小说', img: 'https://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg' },
-    { title: 'aaa', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: 'https://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg' },
-    { title: 'ssssaaaasss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: 'https://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg' },
-    { title: 'ddddd', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: 'https://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg' },
+    { title: 'aaaa', content: 'ssssss', tiem: '5678-12-01', mark: '轻小说', img: `${urls[0]}` },
+    { title: 'aaa', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: `${urls[1]}` },
+    { title: 'ssssaaaasss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: `${urls[2]}`},
+    { title: 'ddddd', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: `${urls[3]}` },
 ])
 
 let bestnew = bestnew1.value
@@ -187,9 +145,9 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
     // console.log(tab.props.label, event)
     tab.props.label == '最新文章' ?
         bestnew = bestnew1.value :
-        tab.props.label == '动画资讯' ?
+        tab.props.label == '动画相关' ?
             bestnew = bestnew2.value :
-            tab.props.label == '轻小说资讯' ?
+            tab.props.label == '轻小说相关' ?
                 bestnew = bestnew3.value :
                 null
     console.log(bestnew)
@@ -284,35 +242,6 @@ onMounted(() => {
                     color: #409efc;
                 }
             }
-        }
-    }
-
-    .left {
-        // height: 100vh;
-        // background-color: cadetblue;
-        width: 28.5%;
-
-        .card_2 {
-            border-radius: 10px;
-
-            .title {
-                width: 100%;
-                height: 70px;
-                background: linear-gradient(-45deg, #b3e9fd, #0b72f8, #23a6d5, #74b8f8);
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                animation: gradientBG 10s ease infinite;
-                background-size: 300% 300%;
-            }
-        }
-
-        .card_1 {
-            border-radius: 10px;
-            background: linear-gradient(-45deg, #b3e9fd, #418df1, #23a6d5, #74b8f8);
-            border: none;
-            animation: gradientBG 15s ease infinite;
-            background-size: 300% 300%;
         }
     }
 }

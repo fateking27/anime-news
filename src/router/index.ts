@@ -1,4 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import Main from '@/views/layout/Main/index.vue'
+import Layout from '@/views/layout/index.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
@@ -6,33 +8,40 @@ const router = createRouter({
     { path: '/', redirect: '/home' },
     {
       path: '/',
-      name: 'Home',
-      component: () => import('@/views/layout/index.vue'),
+      name: 'Layout',
+      component: Layout,
       children: [
         {
-          path: 'home',
-          name: 'Home',
-          component: () => import('@/views/Home/index.vue')
-        },
-        {
-          path: 'details',
-          name: 'Details',
-          component: () => import('@/views/Details/index.vue')
-        },
-        {
-          path: 'pictures',
-          name: 'Pictures',
-          component: () => import('@/views/Pictures/index.vue')
-        },
-        {
-          path: 'downloads',
-          name: 'Downloads',
-          component: () => import('@/views/Downloads/index.vue')
+          path:'/',
+          name: 'Main',
+          component: Main,
+          children: [
+            {
+              path: 'home',
+              name: 'Home',
+              component: () => import('@/views/layout/Main/Home/index.vue')
+            },
+            {
+              path: 'details',
+              name: 'Details',
+              component: () => import('@/views/layout/Main/Details/index.vue')
+            },
+            {
+              path: 'pictures',
+              name: 'Pictures',
+              component: () => import('@/views/layout/Main/Pictures/index.vue')
+            },
+            {
+              path: 'downloads',
+              name: 'Downloads',
+              component: () => import('@/views/layout/Main/Downloads/index.vue')
+            }
+          ]
         },
         {
           path: '/404',
           name: 'NotFound',
-          component: () => import('@/views/NotFound404/index.vue')
+          component: () => import('@/views/layout/Main/NotFound404/index.vue')
         },
         {
           path: '/:pathMatch(.*)',

@@ -1,6 +1,6 @@
 <template>
     <el-card ref="myElement" v-scroll="handleScroll" class="card_3" :body-style="{ padding: '10px' }"
-        :class="{ 'fixed': isFixed, 'bottom': isBottom }" style="margin-top: 15px; border-radius: 10px; border: none">
+        :class="{ 'fixed': isFixed, 'bottom': isBottom }" style="margin-top: 15px; border-radius: 10px;">
         <div class="title" style="
             display: flex;
             width: 340px;
@@ -55,8 +55,8 @@
                     <span style="padding-right: 5px">Aniplex新作动画代号《O》《M》制作决定</span>
                 </div>
                 <div class="fir_img">
-                    <el-image
-                        src="https://www.timelogs.cn/wp-content/uploads/2023/10/%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB%E5%BF%AB%E8%AE%AF.webp"></el-image>
+                    <el-image fit="cover"
+                        :src="urls[0]"></el-image>
                 </div>
             </div>
             <div class="next_items" style="margin-top: 5px;">
@@ -71,11 +71,11 @@
               align-items: center;
               margin-top: 15px;
               cursor: pointer;
-            " v-for="item in 4">
+            " v-for="(item,index) in urls.splice(1,4)" :key="item">
                     <div :style="{
                         width: '45px',
                         height: '20px',
-                        'background-color': `${item == 1 ? 'orange' : item == 2 ? '#0b72f8' : 'darkgray'}`,
+                        'background-color': `${index == 0 ? 'orange' : index == 1 ? '#0b72f8' : 'darkgray'}`,
                         color: 'white',
                         'text-align': 'right',
                         'line-height': '20px',
@@ -85,11 +85,11 @@
                         left: '-10px',
                         'z-index': '8'
                     }">
-                        <span style="padding-right: 5px">{{ item + 1 }}</span>
+                        <span style="padding-right: 5px">{{ index + 2 }}</span>
                     </div>
                     <div class="items_img" style="margin-left: -30px;">
-                        <el-image style="width: 120px;border-radius: 7px;cursor: pointer;"
-                            src="https://www.timelogs.cn/wp-content/uploads/2023/10/%E6%AF%8F%E6%97%A5%E6%96%B0%E9%97%BB%E5%BF%AB%E8%AE%AF.webp"></el-image>
+                        <el-image fit="cover" style="width: 120px;height: 75px;border-radius: 7px;cursor: pointer;"
+                            :src="item"></el-image>
                     </div>
                     <div class="title" style="margin-top: -20px;margin-left: 10px;cursor: pointer;">
                         Aniplex新作动画代号《O》《M》制作决定
@@ -107,6 +107,15 @@ const isFixed = ref(false)
 const isBottom = ref(false)
 
 const myElement = ref()
+
+const urls = [
+    'https://dlink.host/wx1.sinaimg.cn/large/008sKYvhly8hng1dr6pnej31cf0u07da.jpg',
+    'https://dlink.host/wx1.sinaimg.cn/large/008sKYvhly8hng1dr6pnej31cf0u07da.jpg',
+    'https://dlink.host/wx3.sinaimg.cn/large/008sKYvhly8hng1fjrq8aj31hc0u07di.jpg',
+    'https://dlink.host/wx3.sinaimg.cn/large/008sKYvhly8hng1fdo4vhj316k0u0tk7.jpg',
+    'https://dlink.host/wx3.sinaimg.cn/large/008sKYvhly8hng1fbof9fj30u016q7df.jpg',
+]
+
 const handleScroll = () => {
     // 获取滚动位置
     // const scrollPosition = window.scrollY || document.documentElement.scrollTop;

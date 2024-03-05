@@ -29,7 +29,7 @@
                 <el-pagination background layout="prev, pager, next" :total="100" />
             </div>
         </div>
-        <div class="left"></div>
+        <!-- <div class="left"></div> -->
     </div>
 </template>
 
