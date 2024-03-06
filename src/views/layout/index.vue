@@ -28,11 +28,8 @@
         <HeaderView />
       </el-header>
       <el-main style="margin-top: 60px;padding: 0;">
-        <div class="img" v-if="isshow" style="background-color: #1989fa;width: 100%;height: 30vh;">
-          <el-image fit="cover" style="height: 100%;width: 100%;" src="https://dlink.host/wx4.sinaimg.cn/large/008sKYvhly8hng1gcv7r6j31z40u048p.jpg"></el-image>
-        </div>
-        <MainView />
-        <!-- <router-view></router-view> -->
+        <!-- <MainView /> -->
+        <router-view style="margin-top: 15px;"></router-view>
       </el-main>
       <el-footer style="background-color: black; height: 95px;z-index: 1;">
         <FooterView />

@@ -1,8 +1,8 @@
 <template>
   <div class="header" style="background-color: #3b4675;">
     <div class="title">
-      <span style="color: rgb(92, 185, 221)">F.K</span>
-      <span style="color: rgb(252, 91, 91)">.27</span>
+      <span style="color: rgb(92, 185, 221)">Anime</span>
+      <span style="color: rgb(252, 91, 91)">x</span>
     </div>
     <div class="tabs">
       <div v-for="item in tabs" @click="onTab(item.path)">

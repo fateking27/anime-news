@@ -9,6 +9,9 @@ import ElementPlus from 'element-plus'
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import 'moment/dist/locale/zh-cn'
+//@ts-ignore
+// import 'amfe-flexible'
+
 
 
 const app = createApp(App)

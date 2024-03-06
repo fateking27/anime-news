@@ -199,14 +199,14 @@ onMounted(() => {
         width: 885px;
 
         .container {
-            border-radius: 10px;
+            border-radius: 4px;
             // background-color: rgb(231, 230, 230);
             // margin-top: 0px;
             min-height: 1060px;
             width: 100%;
 
             .el-card {
-                border-radius: 10px;
+                border-radius: 4px;
 
                 // width: 100%;
                 .text_container {
@@ -280,7 +280,7 @@ onMounted(() => {
         width: 28.5%;
 
         .card_2 {
-            border-radius: 10px;
+            border-radius: 4px;
 
             .title {
                 width: 100%;
@@ -295,7 +295,7 @@ onMounted(() => {
         }
 
         .card_1 {
-            border-radius: 10px;
+            border-radius: 4px;
             background: linear-gradient(-45deg, #b3e9fd, #418df1, #23a6d5, #74b8f8);
             border: none;
             animation: gradientBG 15s ease infinite;

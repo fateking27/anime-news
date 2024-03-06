@@ -1,5 +1,4 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Main from '@/views/layout/Main/index.vue'
 import Layout from '@/views/layout/index.vue'
 
 const router = createRouter({
@@ -11,44 +10,37 @@ const router = createRouter({
       name: 'Layout',
       component: Layout,
       children: [
-        {
-          path:'/',
-          name: 'Main',
-          component: Main,
-          children: [
             {
               path: 'home',
               name: 'Home',
-              component: () => import('@/views/layout/Main/Home/index.vue')
+              component: () => import('@/views/Home/index.vue')
             },
             {
               path: 'details',
               name: 'Details',
-              component: () => import('@/views/layout/Main/Details/index.vue')
+              component: () => import('@/views/Details/index.vue')
             },
             {
               path: 'pictures',
               name: 'Pictures',
-              component: () => import('@/views/layout/Main/Pictures/index.vue')
+              component: () => import('@/views/Pictures/index.vue')
             },
             {
               path: 'downloads',
               name: 'Downloads',
-              component: () => import('@/views/layout/Main/Downloads/index.vue')
+              component: () => import('@/views/Downloads/index.vue')
             }
           ]
         },
         {
           path: '/404',
           name: 'NotFound',
-          component: () => import('@/views/layout/Main/NotFound404/index.vue')
+          component: () => import('@/views/NotFound404/index.vue')
         },
         {
           path: '/:pathMatch(.*)',
           redirect: '/404'
         }
-      ]
-    }
   ],
   //打开新页面跳回页面顶部
   scrollBehavior(to, from, savedPosition) {

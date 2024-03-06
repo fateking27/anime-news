@@ -1,6 +1,6 @@
 <template>
     <el-card ref="myElement" v-scroll="handleScroll" class="card_3" :body-style="{ padding: '10px' }"
-        :class="{ 'fixed': isFixed, 'bottom': isBottom }" style="margin-top: 15px; border-radius: 10px;">
+        :class="{ 'fixed': isFixed, 'bottom': isBottom }" style="margin-top: 15px; border-radius: 4px;">
         <div class="title" style="
             display: flex;
             width: 340px;
@@ -66,7 +66,7 @@
               /* background-color: #409efc; */
               margin: auto;
               /* margin-top: 15px; */
-              border-radius: 7px;
+              border-radius: 4px;
               display: flex;
               align-items: center;
               margin-top: 15px;
@@ -88,7 +88,7 @@
                         <span style="padding-right: 5px">{{ index + 2 }}</span>
                     </div>
                     <div class="items_img" style="margin-left: -30px;">
-                        <el-image fit="cover" style="width: 120px;height: 75px;border-radius: 7px;cursor: pointer;"
+                        <el-image fit="cover" style="width: 120px;height: 75px;border-radius: 4px;cursor: pointer;"
                             :src="item"></el-image>
                     </div>
                     <div class="title" style="margin-top: -20px;margin-left: 10px;cursor: pointer;">
@@ -154,7 +154,7 @@ onUnmounted(() => {
 
                 .el-image {
                     // margin-top: -40px;
-                    border-radius: 10px;
+                    border-radius: 4px;
                     height: 155px;
                     width: 340px;
                     cursor: pointer;
@@ -198,7 +198,7 @@ onUnmounted(() => {
 
                 .el-image {
                     // margin-top: -40px;
-                    border-radius: 10px;
+                    border-radius: 4px;
                     height: 155px;
                     width: 340px;
                     cursor: pointer;
@@ -242,7 +242,7 @@ onUnmounted(() => {
 
                 .el-image {
                     // margin-top: -40px;
-                    border-radius: 10px;
+                    border-radius: 4px;
                     height: 155px;
                     width: 340px;
                     cursor: pointer;

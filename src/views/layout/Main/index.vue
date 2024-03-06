@@ -1,7 +1,7 @@
 <template>
     <div class="main">
         <div class="right">
-            <router-view></router-view>
+            <!-- <router-view></router-view> -->
             <!-- <div class="carousel" style="width: 100%">
                 <el-carousel :interval="5000" style="border-radius: 10px; height: 100%">
                     <el-carousel-item v-for="item in urls" :key="item">

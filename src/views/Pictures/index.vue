@@ -4,7 +4,7 @@
             <div class="top">
                 <div>
                     <div style="color: darkgray;">—— CATEGORY ——</div>
-                    <div>资源下载</div>
+                    <div>壁纸福利</div>
                 </div>
             </div>
             <div class="container">
@@ -29,23 +29,21 @@
                 <el-pagination background layout="prev, pager, next" :total="100" />
             </div>
         </div>
-        <!-- <div class="left"></div> -->
+        <!-- <div class="left">
+        </div> -->
     </div>
 </template>
 
 <script setup lang='ts'>
 const urls = [
-    'https://8.138.83.140/files/Pictures/d2b16369ff6d111452e55090590c6a70.jpg',
-    // 'https://8.138.83.140/files/Pictures/e3fca56d96308eb5d22bcad998c20454.jpg',
-    'https://8.138.83.140/files/Pictures/5ea4a1a827fdcadac2228d2c31611ede.jpg',
-    'https://8.138.83.140/files/Pictures/5dbe718f322cae8dbdeb50645c3f7365.jpg',
-    'https://8.138.83.140/files/Pictures/91bb2b7ccc1475bd0fe2f91ab212048c.jpg',
-    'https://8.138.83.140/files/Pictures/947b048dbef6022399f384591bddcf73.jpg',
-    'https://8.138.83.140/files/Pictures/947b048dbef6022399f384591bddcf73.jpg',
-    'https://8.138.83.140/files/Pictures/975d6a3b04f5797e2cf81fef10681d90.jpg',
-    'https://8.138.83.140/files/Pictures/a867f413ccf43707943fd1d65097627d.jpg',
-    'https://8.138.83.140/files/Pictures/d2b16369ff6d111452e55090590c6a70.jpg',
-    'https://8.138.83.140/files/Pictures/GGO8BnUWMAAoqyw.jpg',
+    'https://dlink.host/wx1.sinaimg.cn/large/008sKYvhly8hng1dr6pnej31cf0u07da.jpg',
+    'https://dlink.host/wx3.sinaimg.cn/large/008sKYvhly8hng1fjrq8aj31hc0u07di.jpg',
+    'https://dlink.host/wx3.sinaimg.cn/large/008sKYvhly8hng1fjrq8aj31hc0u07di.jpg',
+    'https://dlink.host/wx3.sinaimg.cn/large/008sKYvhly8hng1fdo4vhj316k0u0tk7.jpg',
+    'https://dlink.host/wx4.sinaimg.cn/large/008sKYvhly8hnh4kmk4yqj31ki0u0dnw.jpg',
+    'https://dlink.host/wx3.sinaimg.cn/large/008sKYvhly8hng1fg4qioj30u00u0n2j.jpg',
+    'https://dlink.host/wx3.sinaimg.cn/large/008sKYvhly8hng1fg4qioj30u00u0n2j.jpg',
+    'https://dlink.host/wx4.sinaimg.cn/large/008sKYvhly8hng1gcv7r6j31z40u048p.jpg',
 ]
 </script>
 
@@ -65,7 +63,7 @@ const urls = [
         .top {
             border: 1px solid rgb(212, 212, 212);
             background-color: white;
-            border-radius: 10px;
+            border-radius: 4px;
             width: 100%;
             display: flex;
             flex-wrap: wrap;
@@ -96,7 +94,7 @@ const urls = [
                 width: 435px;
                 height: 320px;
                 background-color: white;
-                border-radius: 10px;
+                border-radius: 4px;
                 margin-bottom: 20px;
                 box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
                 transition: all 0.3s ease-in-out;
@@ -128,7 +126,8 @@ const urls = [
                 }
             }
         }
-        .pagination{
+
+        .pagination {
             width: 100%;
             display: flex;
             justify-content: center;
