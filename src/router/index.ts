@@ -26,6 +26,11 @@ const router = createRouter({
               component: () => import('@/views/Pictures/index.vue')
             },
             {
+              path: 'animeCalendar',
+              name: 'AnimeCalendar',
+              component: () => import('@/views/AnimeCalendar/index.vue')
+            },
+            {
               path: 'downloads',
               name: 'Downloads',
               component: () => import('@/views/Downloads/index.vue')

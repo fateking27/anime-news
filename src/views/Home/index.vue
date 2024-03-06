@@ -1,5 +1,5 @@
 <template>
-    <div class="img" style="background-color: #1989fa;width: 100%;height: 15vw;">
+    <div class="img" style="background-color: #1989fa;width: 100%;height: 17vw;">
           <el-image fit="cover" style="width: 100%;height: 100%;" src="https://dlink.host/wx4.sinaimg.cn/large/008sKYvhly8hng1gcv7r6j31z40u048p.jpg"></el-image>
         </div>
     <div class="main">
@@ -49,7 +49,7 @@
                                 </el-image>
                                 <div class="mark_" style="z-index: 1; position: relative; top: -149px; left: 7px;">
                                     <el-tag class="ml-2" size="small" type="info" style="
-                        background-color: rgb(29, 27, 27);
+                        background-color:gold;
                         border: none;
                         opacity: 0.8;
                         color: aliceblue;
@@ -133,7 +133,6 @@
 
 <script setup lang="ts">
 // import HostCard from '../../components/HostCard/index.vue'
-import { getCalendar } from '@/api/calendar';
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router';
 const router = useRouter()
@@ -198,14 +197,7 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
     console.log(bestnew)
 }
 
-const calendar = async () => {
-    const { data } = await getCalendar()
-    console.log(data)
-}
 
-onMounted(() => {
-    calendar()
-})
 </script>
 
 <style lang="scss" scoped>

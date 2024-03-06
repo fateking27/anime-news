@@ -1,12 +1,13 @@
 <template>
   <div class="header" style="background-color: #3b4675;">
     <div class="title">
-      <span style="color: rgb(92, 185, 221)">Anime</span>
+      <span style="color: white">Anime</span>
+      <!-- <span style="color: rgb(92, 185, 221)">Anime</span> -->
       <span style="color: rgb(252, 91, 91)">x</span>
     </div>
     <div class="tabs">
       <div v-for="item in tabs" @click="onTab(item.path)">
-        <el-icon size="20" color="#409EFC">
+        <el-icon color="#409EFC">
           <component :is="item.icon"></component>
         </el-icon>&nbsp;
         <span>{{ item.tab }}</span>
@@ -50,9 +51,9 @@ const inputValue = ref('')
 const refInput = ref()
 const tabs = [
   { tab: "主页", icon: "HomeFilled", path: "home" },
-  { tab: "每日番组放送", icon: "PictureFilled", path: "home" },
+  { tab: "每日番组放送", icon: "PictureFilled", path: "animeCalendar" },
   { tab: "壁纸福利", icon: "PictureFilled", path: "pictures" },
-  { tab: "ACGN资讯速报", icon: "Promotion", path: "pictures" },
+  { tab: "ACGN资讯速报", icon: "Promotion", path: "animeCalendar" },
   { tab: "资源下载", icon: "Download", path: "downloads" }
 ]
 
@@ -86,13 +87,14 @@ const inputBlur = () => {
   .title {
     font-family: '华文琥珀';
     font-style: italic;
-    font-size: 40px;
+    font-size: 3vw;
     cursor: pointer;
   }
 
   .tabs {
     display: flex;
     margin-left: 20px;
+    font-size: 0.85vw;
 
     div {
       color: rgb(255, 255, 255);
@@ -101,7 +103,7 @@ const inputBlur = () => {
       transition: color 0.3s linear 0s;
       margin-left: 20px;
       display: flex;
-      // align-items: center;
+      align-items: center;
       cursor: pointer;
       // .el-icon{
       //   line-height: 30px;

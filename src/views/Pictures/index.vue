@@ -9,8 +9,8 @@
             </div>
             <div class="container">
                 <div class="card" v-for="item in urls" :key="item">
-                    <div class="img" style="width: 100%;height: 225px;border-radius: 10px 10px 0 0;">
-                        <el-image style="width: 100%;height: 100%;border-radius: 10px 10px 0 0;" :src="item"
+                    <div class="img" style="width: 100%;height: 225px;border-radius: 4px 4px 0 0;">
+                        <el-image style="width: 100%;height: 100%;border-radius: 4px 4px 0 0;" :src="item"
                             fit="cover" />
                     </div>
                     <div class="title">

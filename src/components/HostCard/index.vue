@@ -118,12 +118,12 @@ const urls = [
 
 const handleScroll = () => {
     // 获取滚动位置
-    // const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
     // console.log(scrollPosition)
     // console.log(document.body.offsetHeight)
 
     // 设置固定条件，例如滚动到某个位置
-    // if (scrollPosition > 553) {
+    // if (scrollPosition > 765) {
     //     isFixed.value = true;
     // } else {
     //     isFixed.value = false;
@@ -138,7 +138,7 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-    //   window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('scroll', handleScroll);
 });
 </script>
   
