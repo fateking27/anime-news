@@ -8,18 +8,18 @@
                     <div class="card" v-for="item_ in item.items" :key="item_.id"
                         style="border: 1px solid rgb(198, 200, 202);box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;margin: 0px 0px 20px 0;border-radius: 4px;padding: 10px;">
                         <div class="img" style="width: 100%;height: 225px;border-radius: 4px;">
-                            <el-image :src="item_.images?.large" style="width: 100%;height: 100%;border-radius: 4px;"
+                            <el-image laze :src="item_.images?.large" style="width: 100%;height: 100%;border-radius: 4px;"
                                 fit="cover" />
                         </div>
                         <div class="title">
                             <div style="height: 40px;margin-top: 10px;">
                                 <el-text size="large" tag="b" line-clamp="2">
-                                    {{ item_.name }}
+                                    {{ item_.name_cn ? item_.name_cn : item_.name }}
                                 </el-text>
                             </div>
                         </div>
                         <div class="time">
-                            <span>⏱首播时间：{{ item_.air_date }}</span>
+                            <span>⏱放送时间：{{ item_.air_date }}</span>
                         </div>
                     </div>
                 </el-tab-pane>
@@ -39,11 +39,11 @@ const activeName = ref(moment().format('dddd'))
 const calendarData = ref()
 
 const handleClick = (tab: TabsPaneContext, event: Event) => {
-    console.log(tab, event)
+    // console.log(tab, event)
 }
 const calendar = async () => {
     const { data } = await getCalendar()
-    console.log(data)
+    // console.log(data)
     calendarData.value = data
 }
 
