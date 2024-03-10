@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const bgmAxios = axios.create({
   baseURL: '/bgmApi',
-  timeout: 5000
+  // timeout: 5000
 })
 
 bgmAxios.interceptors.request.use(

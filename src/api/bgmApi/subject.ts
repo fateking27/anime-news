@@ -1,9 +1,15 @@
-import axios from '@/utils/bgmAxios'
+import axios from 'axios'
+const token = 'u9w66f54elD9cZYEw8Fp9Ra6fu2C1QXdfAOS11tc'
 
 export const getCalendar = () => {
-  return axios.get('/calendar')
+  return axios.get('https://api.bgm.tv/calendar')
 }
 
 export const getSubject = (subject_id: string) => {
-  return axios.get(`/v0/subjects/${subject_id}`)
+  return axios.get(`https://api.bgm.tv/v0/subjects/${subject_id}`, {
+    headers: {
+      'Content-Type': 'application/json; charset=utf-8',
+      Authorization: 'Bearer ' + token
+    }
+  })
 }

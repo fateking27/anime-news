@@ -43,13 +43,13 @@ export default defineConfig({
     host: ['0.0.0.0'],
     cors: true,
     //跨域处理
-    proxy: {
-      '/bgmApi': {
-        target: 'https://api.bgm.tv',
-        changeOrigin: true,
-        secure: true,
-        rewrite: (path) => path.replace(/^\/bgmApi/, '')
-      }
-    }
+  //   proxy: {
+  //     '/bgmApi': {
+  //       target: 'https://api.bgm.tv',
+  //       changeOrigin: true,
+  //       secure: true,
+  //       rewrite: (path) => path.replace(/^\/bgmApi/, '')
+  //     }
+  //   }
   }
 })
