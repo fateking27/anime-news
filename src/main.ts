@@ -12,6 +12,8 @@ import 'moment/dist/locale/zh-cn'
 //@ts-ignore
 // import 'amfe-flexible'
 
+//引入图片懒加载插件
+import Lazyload from "vue3-lazyload"
 
 
 const app = createApp(App)
@@ -23,6 +25,11 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 app.use(ElementPlus, {
     locale: zhCn,
   })
+
+app.use(Lazyload,{
+  loading: '',
+  error: ''
+})
 
 app.use(createPinia())
 app.use(router)

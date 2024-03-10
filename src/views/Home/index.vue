@@ -39,14 +39,7 @@
                 " v-for="item in bestnew">
                             <div class="img"
                                 style="cursor: pointer;width: 230px; height: 100%; background-color: darkgrey; border-radius: 4px;margin-right: 20px;">
-                                <el-image style="height: 150px;width: 230px; border-radius: 10px" :src="item.img">
-
-                                    <template #error>
-                                        <div class="image-slot">
-                                            <el-icon><icon-picture /></el-icon>
-                                        </div>
-                                    </template>
-                                </el-image>
+                                <img style="height: 150px;width: 230px; border-radius: 10px" v-lazy="item.img"/>
                                 <div class="mark_" style="z-index: 1; position: relative; top: -149px; left: 7px;">
                                     <el-tag class="ml-2" size="small" type="info" style="
                         background-color:gold;

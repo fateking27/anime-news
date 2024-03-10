@@ -7,7 +7,7 @@
                 v-for="item in calendarData" :key="item.weekday.id">
                 <div class="card" v-for="item_ in item.items" :key="item_.id" @click="onCard(item_.id)">
                     <div class="img" style="width: 100%;height: 225px;border-radius: 4px;">
-                        <el-image laze :src="item_.images?.common" style="width: 100%;height: 100%;border-radius: 4px;"
+                        <img v-lazy="item_.images?.large" style="width: 100%;height: 100%;border-radius: 4px;"
                             fit="cover" />
                     </div>
                     <div class="title">
@@ -65,11 +65,13 @@ onMounted(() => {
 <style lang='scss' scoped>
 .container {
     .el-tabs {
-        min-height: 90vh;
+        min-height: 100vh;
+
         .el-tab-pane {
             display: grid;
             // grid-gap: 0px;
-            grid-template-columns: repeat(6,1fr);
+            grid-template-columns: repeat(6, 1fr);
+
             .card {
                 width: 160px;
                 // float: left;
