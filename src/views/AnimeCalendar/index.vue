@@ -5,7 +5,7 @@
             <!-- <el-scrollbar max-height="80.7vh"> -->
             <el-tab-pane :label="item.weekday.cn + ' (' + item.weekday.ja + ')'" :name="item.weekday.cn"
                 v-for="item in calendarData" :key="item.weekday.id">
-                <div class="card" v-for="item_ in item.items" :key="item_.id" @click="subject(item_.id)">
+                <div class="card" v-for="item_ in item.items" :key="item_.id" @click="onCard(item_.id)">
                     <div class="img" style="width: 100%;height: 225px;border-radius: 4px;">
                         <el-image laze :src="item_.images?.common" style="width: 100%;height: 100%;border-radius: 4px;"
                             fit="cover" />
@@ -30,6 +30,8 @@
 
 <script setup lang='ts'>
 import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router';
+const router = useRouter()
 import { getCalendar, getSubject } from '@/api/bgmApi/subject';
 import type { TabsPaneContext } from 'element-plus'
 import moment from 'moment'
@@ -46,6 +48,10 @@ const calendar = async () => {
     calendarData.value = data
 }
 
+const onCard = (subject_id: string) => {
+    router.push({ path: 'animeDetails', query: { subject_id } })
+}
+
 const subject = async (subject_id: string) => {
     const res = await getSubject(subject_id)
     console.log(res.data)
@@ -59,17 +65,21 @@ onMounted(() => {
 <style lang='scss' scoped>
 .container {
     .el-tabs {
+        min-height: 90vh;
         .el-tab-pane {
+            display: grid;
+            // grid-gap: 0px;
+            grid-template-columns: repeat(6,1fr);
             .card {
-                width: 170px;
-                float: left;
+                width: 160px;
+                // float: left;
                 transition: all 0.3s ease-in-out;
                 border: 1px solid rgb(198, 200, 202);
                 box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
                 margin: 0px 0px 20px 0;
                 border-radius: 4px;
                 padding: 10px;
-                margin: 6.5px;
+                margin: 11px;
 
                 .title {
                     .el-text {
