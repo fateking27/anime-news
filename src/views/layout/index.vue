@@ -40,7 +40,7 @@
 
 <script setup lang="ts">
 import HeaderView from './components/HeaderView.vue'
-import MainView from './components/MainView.vue'
+// import MainView from './components/MainView.vue'
 import FooterView from './components/FooterView.vue'
 import { onMounted,ref } from 'vue';
 import { useRoute } from "vue-router";

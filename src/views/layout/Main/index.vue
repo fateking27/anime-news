@@ -131,7 +131,7 @@
 
 <script setup lang="ts">
 import HostCard from '../../../components/HostCard/index.vue'
-import { getCalendar } from '@/api/calendar';
+// import { getCalendar } from '@/api/calendar';
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router';
 const router = useRouter()
@@ -196,14 +196,14 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
     console.log(bestnew)
 }
 
-const calendar = async () => {
-    const { data } = await getCalendar()
-    console.log(data)
-}
+// const calendar = async () => {
+//     const { data } = await getCalendar()
+//     console.log(data)
+// }
 
-onMounted(() => {
-    calendar()
-})
+// onMounted(() => {
+//     calendar()
+// })
 </script>
 
 <style lang="scss" scoped>
