@@ -5,9 +5,9 @@ import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
-import path from 'node:path'
+// import path from 'node:path'
 //@ts-ignore
-import postCssPxToRem from 'postcss-pxtorem'
+// import postCssPxToRem from 'postcss-pxtorem'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -40,15 +40,16 @@ export default defineConfig({
   // },
   server: {
     //@ts-ignore
-    host: ['0.0.0.0']
-    // cors: true,
-    // proxy: {
-    //   '/api': {
-    //     target: 'https://api.loveuxr.com',
-    //     changeOrigin: true,
-    //     secure: true,
-    //     rewrite: (path) => path.replace(/^\/api/, '')
-    //   }
-    // }
+    host: ['0.0.0.0'],
+    cors: true,
+    //跨域处理
+    proxy: {
+      '/bgmApi': {
+        target: 'https://api.bgm.tv',
+        changeOrigin: true,
+        secure: true,
+        rewrite: (path) => path.replace(/^\/bgmApi/, '')
+      }
+    }
   }
 })

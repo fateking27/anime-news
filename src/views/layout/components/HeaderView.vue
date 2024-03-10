@@ -21,22 +21,6 @@
         </label>
           <el-button @click="inputFocus()" type="text" :style="btnDis" :icon="Search" circle />
       </div>
-      <!-- <div class="login" style="margin-left: 20px; margin-top: -5px">
-        <button
-          style="
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            border: 1px rgb(186, 214, 247) solid;
-            background-color: rgb(177, 211, 250);
-            font-family: '华文琥珀';
-            color: rgb(252, 91, 91);
-            cursor: pointer;
-          "
-        >
-          登陆
-        </button>
-      </div> -->
     </div>
   </div>
 </template>
@@ -87,7 +71,7 @@ const inputBlur = () => {
   .title {
     font-family: '华文琥珀';
     font-style: italic;
-    font-size: 3vw;
+    font-size: 2vw;
     cursor: pointer;
   }
 
