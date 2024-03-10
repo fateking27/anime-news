@@ -7,7 +7,7 @@
                 v-for="item in calendarData" :key="item.weekday.id">
                 <div class="card" v-for="item_ in item.items" :key="item_.id" @click="onCard(item_.id)">
                     <div class="img" style="width: 100%;height: 225px;border-radius: 4px;">
-                        <img v-lazy="item_.images?.large" style="width: 100%;height: 100%;border-radius: 4px;"
+                        <img v-lazy="item_.images?.common" style="width: 100%;height: 100%;border-radius: 4px;"
                             fit="cover" />
                     </div>
                     <div class="title">
