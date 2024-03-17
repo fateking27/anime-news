@@ -32,7 +32,7 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router';
 const router = useRouter()
-import { getCalendar, getSubject } from '@/api/bgmApi/subject';
+import { getCalendar } from '@/api/bgmApi/subject';
 import type { TabsPaneContext } from 'element-plus'
 import moment from 'moment'
 
@@ -50,11 +50,6 @@ const calendar = async () => {
 
 const onCard = (subject_id: string) => {
     router.push({ path: 'animeDetails', query: { subject_id } })
-}
-
-const subject = async (subject_id: string) => {
-    const res = await getSubject(subject_id)
-    console.log(res.data)
 }
 
 onMounted(() => {

@@ -1,7 +1,8 @@
 <template>
-    <div class="img" style="background-color: #1989fa;width: 100%;height: 17vw;">
-          <el-image fit="cover" style="width: 100%;height: 100%;" src="https://dlink.host/wx4.sinaimg.cn/large/008sKYvhly8hng1gcv7r6j31z40u048p.jpg"></el-image>
-        </div>
+    <!-- <div class="img" style="background-color: #1989fa;width: 100%;height: 17vw;">
+        <el-image fit="cover" style="width: 100%;height: 100%;"
+            src="https://dlink.host/wx4.sinaimg.cn/large/008sKYvhly8hng1gcv7r6j31z40u048p.jpg"></el-image>
+    </div> -->
     <div class="main">
         <div class="right">
             <div class="carousel" style="width: 100%">
@@ -39,7 +40,7 @@
                 " v-for="item in bestnew">
                             <div class="img"
                                 style="cursor: pointer;width: 230px; height: 100%; background-color: darkgrey; border-radius: 4px;margin-right: 20px;">
-                                <img style="height: 150px;width: 230px; border-radius: 10px" v-lazy="item.img"/>
+                                <img style="height: 150px;width: 230px; border-radius: 10px" v-lazy="item.img" />
                                 <div class="mark_" style="z-index: 1; position: relative; top: -149px; left: 7px;">
                                     <el-tag class="ml-2" size="small" type="info" style="
                         background-color:gold;
@@ -172,7 +173,7 @@ const bestnew2 = ref([
 const bestnew3 = ref([
     { title: 'aaaa', content: 'ssssss', tiem: '5678-12-01', mark: '轻小说', img: `${urls[0]}` },
     { title: 'aaa', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: `${urls[1]}` },
-    { title: 'ssssaaaasss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: `${urls[2]}`},
+    { title: 'ssssaaaasss', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: `${urls[2]}` },
     { title: 'ddddd', content: 'ssssss', tiem: '2024-12-01', mark: '轻小说', img: `${urls[3]}` },
 ])
 
@@ -276,34 +277,35 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
         }
     }
 }
+
 .left {
-        // height: 100vh;
-        // background-color: cadetblue;
-        width: 28.5%;
+    // height: 100vh;
+    // background-color: cadetblue;
+    width: 28.5%;
 
-        .card_2 {
-            border-radius: 4px;
+    .card_2 {
+        border-radius: 4px;
 
-            .title {
-                width: 100%;
-                height: 70px;
-                background: linear-gradient(-45deg, #1549b8, #0b72f8, #054c7a, #74b8f8);
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                animation: gradientBG 10s ease infinite;
-                background-size: 300% 300%;
-            }
-        }
-
-        .card_1 {
-            border-radius: 4px;
+        .title {
+            width: 100%;
+            height: 70px;
             background: linear-gradient(-45deg, #1549b8, #0b72f8, #054c7a, #74b8f8);
-            border: none;
-            animation: gradientBG 15s ease infinite;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: gradientBG 10s ease infinite;
             background-size: 300% 300%;
         }
     }
+
+    .card_1 {
+        border-radius: 4px;
+        background: linear-gradient(-45deg, #1549b8, #0b72f8, #054c7a, #74b8f8);
+        border: none;
+        animation: gradientBG 15s ease infinite;
+        background-size: 300% 300%;
+    }
+}
 
 @keyframes gradientBG {
     0% {
