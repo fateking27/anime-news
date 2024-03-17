@@ -50,7 +50,7 @@ import { useRoute } from 'vue-router';
 const route = useRoute()
 import { getSubject } from '@/api/bgmApi/subject';
 
-const ani_data = ref({})
+const ani_data = ref()
 const subject = async (subject_id: any) => {
     const res = await getSubject(subject_id)
     ani_data.value = res.data
