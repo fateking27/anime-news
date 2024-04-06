@@ -32,7 +32,9 @@
                                             <div class="pb-[10px]" v-show="site.site == 'bilibili'">
                                                 大陆：{{ site.broadcast ?
                                                     moment(`${site.broadcast?.split('/')[1]}`).format("ddd H:mm") :
-                                                moment(site.begin).format("ddd H:mm") }}
+                                                    site.begin ?
+                                                        moment(site.begin).format("ddd H:mm") :
+                                                moment(item_.broadcast).format("ddd H:mm")}}
                                             </div>
                                         </div>
                                         <div v-if="item_.sites.length == 0">
