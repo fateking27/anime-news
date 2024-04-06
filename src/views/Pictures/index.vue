@@ -48,9 +48,7 @@ const urls = [
 <style lang='scss' scoped>
 .photo {
     display: flex;
-    width: 1260px;
-    // background-color: rgb(255, 255, 255);
-    margin: 0 auto;
+    // width: 1260px;
     justify-content: space-between;
 
     .right {

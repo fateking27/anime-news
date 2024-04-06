@@ -16,10 +16,11 @@
     <div class="label">
       <div class="search">
         <label class="label13">
-          <input style="font-size: 13px;" v-model="inputValue" class="inp13" type="text" required @blur="inputBlur()" ref="refInput" />
+          <input style="font-size: 13px;" v-model="inputValue" class="inp13" type="text" required @blur="inputBlur()"
+            ref="refInput" />
           <span class="line13"> </span>
         </label>
-          <el-button @click="inputFocus()" type="text" :style="btnDis" :icon="Search" circle />
+        <el-button @click="inputFocus()" type="text" :style="btnDis" :icon="Search" circle />
       </div>
     </div>
   </div>
@@ -27,7 +28,7 @@
 
 <script setup lang="ts">
 import { Search } from '@element-plus/icons-vue'
-import { ref, reactive} from 'vue'
+import { ref, reactive } from 'vue'
 import { useRouter } from 'vue-router';
 const router = useRouter()
 const btnDis = reactive({ opacity: '0' })
@@ -35,13 +36,13 @@ const inputValue = ref('')
 const refInput = ref()
 const tabs = [
   { tab: "主页", icon: "HomeFilled", path: "home" },
-  { tab: "每日番组放送", icon: "PictureFilled", path: "animeCalendar" },
-  { tab: "壁纸福利", icon: "PictureFilled", path: "pictures" },
   { tab: "ACGN资讯速报", icon: "Promotion", path: "animeCalendar" },
+  { tab: "番组放送", icon: "PictureFilled", path: "animeCalendar" },
+  { tab: "壁纸福利", icon: "PictureFilled", path: "pictures" },
   { tab: "资源下载", icon: "Download", path: "downloads" }
 ]
 
-const onTab = (path:any) => {
+const onTab = (path: any) => {
   router.push({ path: path, query: { path: path } })
 }
 
@@ -65,9 +66,6 @@ const inputBlur = () => {
   margin: 0 auto;
   width: 1260px;
 
-  // height: 100vh;
-  // justify-content: space-between;
-  // background-color: rgb(179, 147, 147);
   .title {
     font-family: '华文琥珀';
     font-style: italic;
@@ -82,7 +80,7 @@ const inputBlur = () => {
 
     div {
       color: rgb(255, 255, 255);
-      font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       font-weight: 600;
       transition: color 0.3s linear 0s;
       margin-left: 20px;

@@ -88,7 +88,7 @@
                             src="https://dlink.host/wx3.sinaimg.cn/large/008sKYvhly8hng1fg4qioj30u00u0n2j.jpg" />
                     </div>
                     <div style="padding-left: 10px; color: white; font-size: 13px; font-family: 'YouYuan'">
-                        <div style="font-size: 17px; padding-bottom: 5px">Fateking27站长</div>
+                        <div style="font-size: 17px; padding-bottom: 5px">Fateking27</div>
                         <div>我们一日日度过的所谓日常，其实可能是连续不断的奇迹----《日常》</div>
                     </div>
                 </div>
@@ -197,16 +197,9 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
 <style lang="scss" scoped>
 .main {
     display: flex;
-    width: 1260px;
-    // height: 100vh;
-    // background-color: rgb(255, 255, 255);
-    margin: 0 auto;
-    margin-top: 20px;
     justify-content: space-between;
 
     .right {
-        // height: 100vh;
-        // background-color: blanchedalmond;
         width: 885px;
 
         .showImg {

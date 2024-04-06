@@ -25,6 +25,7 @@ declare module 'vue' {
     ElPagination: typeof import('element-plus/es')['ElPagination']
     ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     ElTabPane: typeof import('element-plus/es')['ElTabPane']
+    ElTabPanec: typeof import('element-plus/es')['ElTabPanec']
     ElTabs: typeof import('element-plus/es')['ElTabs']
     ElTag: typeof import('element-plus/es')['ElTag']
     ElText: typeof import('element-plus/es')['ElText']

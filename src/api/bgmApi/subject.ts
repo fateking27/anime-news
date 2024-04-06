@@ -15,3 +15,11 @@ export const getCalendar = () => {
 export const getSubject = (subject_id: string) => {
   return axios.get(`https://api.bgm.tv/v0/subjects/${subject_id}`, config)
 }
+
+export const getSite = () => {
+  return axios.get('/bgmApi/api/v1/bangumi/site')
+}
+
+export const getOnair = () => {
+  return axios.get('/bgmApi/api/v1/bangumi/onair')
+}

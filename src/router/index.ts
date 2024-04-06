@@ -22,7 +22,7 @@ const router = createRouter({
         },
         {
           path: 'animeDetails',
-          name: 'animeDetails',
+          name: 'AnimeDetails',
           component: () => import('@/views/AnimeDetails/index.vue')
         },
         {

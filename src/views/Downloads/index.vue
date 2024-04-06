@@ -103,9 +103,6 @@ const urls = [
 <style lang='scss' scoped>
 .photo {
     display: flex;
-    width: 1260px;
-    // background-color: rgb(255, 255, 255);
-    margin: 0 auto;
     justify-content: space-between;
 
     .right {

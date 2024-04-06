@@ -189,10 +189,7 @@ onMounted(() => {
 <style lang="scss" scoped>
 .main {
     display: flex;
-    width: 1260px;
-    // height: 100vh;
-    // background-color: rgb(255, 255, 255);
-    margin: 0 auto;
+    // width: 1260px;
     justify-content: space-between;
 
     .right {
