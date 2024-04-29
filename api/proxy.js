@@ -1,6 +1,6 @@
 // 该服务为 vercel serve跨域处理
 import { createProxyMiddleware } from 'http-proxy-middleware'
-exports function proxy (req, res) {
+export function proxy (req, res) {
     let target = ''
     // 代理目标地址
     // xxxxx 替换为你跨域请求的服务器 如： http://baidu.com
