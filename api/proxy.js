@@ -8,7 +8,7 @@ export const handler = (req, res) => {
         target = 'https://bgm.liumingye.cn' //这里就是在vite中配置的一样
     }
     // 创建代理对象并转发请求
-    createProxyMiddleware({
+    return createProxyMiddleware({
         target,
         changeOrigin: true,
         pathRewrite: {
