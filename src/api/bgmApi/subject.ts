@@ -17,9 +17,9 @@ export const getSubject = (subject_id: string) => {
 }
 
 export const getSite = () => {
-  return axios.get('/api/v1/bangumi/site')
+  return axios.get('/bgmApi/api/v1/bangumi/site')
 }
 
 export const getOnair = () => {
-  return axios.get('/api/v1/bangumi/onair')
+  return axios.get('/bgmApi/api/v1/bangumi/onair')
 }

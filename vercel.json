@@ -1,8 +1,8 @@
 {
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "https://bgm.liumingye.cn/api/"
+      "source": "/bgmApi/(.*)",
+      "destination": "/api/proxy"
     }
   ]
 }
