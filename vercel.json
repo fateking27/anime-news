@@ -3,6 +3,10 @@
     {
       "source": "/bgmApi/(.*)",
       "destination": "/api/proxy"
+    },
+    {
+      "source": "/bangumi-api/(.*)",
+      "destination": "/api/proxy"
     }
   ]
 }
