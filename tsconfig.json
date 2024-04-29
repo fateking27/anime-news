@@ -7,5 +7,7 @@
     {
       "path": "./tsconfig.app.json"
     }
-  ]
+  ],
+  "module": "NodeNext",
+  "moduleResolution": "NodeNext"
 }
