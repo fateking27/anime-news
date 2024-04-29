@@ -9,11 +9,11 @@ const config = reactive({
 })
 
 export const getCalendar = () => {
-  return axios.get('https://api.bgm.tv/calendar')
+  return axios.get('/bangumi-api/calendar')
 }
 
 export const getSubject = (subject_id: string) => {
-  return axios.get(`https://api.bgm.tv/v0/subjects/${subject_id}`, config)
+  return axios.get(`/bangumi-api/v0/subjects/${subject_id}`, config)
 }
 
 export const getSite = () => {

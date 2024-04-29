@@ -29,6 +29,12 @@ export default defineConfig({
     cors: true,
     //跨域处理
     proxy: {
+      '/bangumi-api': {
+        target: 'https://api.bgm.tv',
+        changeOrigin: true,
+        secure: true,
+        rewrite: (path) => path.replace(/^\/bangumi-api/, '')
+      },
       '/bgmApi': {
         target: 'https://bgm.liumingye.cn',
         changeOrigin: true,
