@@ -1,6 +1,6 @@
 // 该服务为 vercel serve跨域处理
 import { createProxyMiddleware } from 'http-proxy-middleware'
-export const handler = (req, res) => {
+module.exports = (req, res) => {
     let target = ''
     // 代理目标地址
     // xxxxx 替换为你跨域请求的服务器 如： http://baidu.com
@@ -8,7 +8,7 @@ export const handler = (req, res) => {
         target = 'https://bgm.liumingye.cn' //这里就是在vite中配置的一样
     }
     // 创建代理对象并转发请求
-    return createProxyMiddleware({
+    createProxyMiddleware({
         target,
         changeOrigin: true,
         pathRewrite: {
