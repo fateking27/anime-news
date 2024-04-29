@@ -1,4 +1,5 @@
 import axios from 'axios'
+import bgmAxios from '@/utils/bgmAxios'
 import { reactive, ref } from 'vue'
 const token = ref('u9w66f54elD9cZYEw8Fp9Ra6fu2C1QXdfAOS11tc')
 const config = reactive({
@@ -9,11 +10,11 @@ const config = reactive({
 })
 
 export const getCalendar = () => {
-  return axios.get('/bangumi-api/calendar')
+  return bgmAxios.get('/calendar')
 }
 
 export const getSubject = (subject_id: string) => {
-  return axios.get(`/bangumi-api/v0/subjects/${subject_id}`, config)
+  return bgmAxios.get(`/v0/subjects/${subject_id}`)
 }
 
 export const getSite = () => {

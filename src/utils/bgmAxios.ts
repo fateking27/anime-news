@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const bgmAxios = axios.create({
-  baseURL: '/bgmApi',
+  baseURL: '/bangumi-api',
   // timeout: 5000
 })
 
