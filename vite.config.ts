@@ -40,7 +40,13 @@ export default defineConfig({
         changeOrigin: true,
         secure: true,
         rewrite: (path) => path.replace(/^\/bgmApi/, '')
-      }
+      },
+      '/notion-api': {
+        target: 'https://api.notion.com',
+        changeOrigin: true,
+        secure: true,
+        rewrite: (path) => path.replace(/^\/notion-api/, '')
+      },
     }
   }
 })

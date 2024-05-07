@@ -68,7 +68,7 @@
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router';
 const router = useRouter()
-import { getCalendar, getOnair, getSite } from '@/api/bgmApi/subject';
+import { getCalendar, getOnair, getSite,notion } from '@/api/bgmApi/subject';
 import type { TabsPaneContext } from 'element-plus'
 import moment from 'moment'
 
@@ -104,8 +104,8 @@ const onair = async () => {
     console.log(calendarData.value)
 }
 const site = async () => {
-    const res = await getSite()
-    console.log(res)
+    const {data} = await notion()
+    console.log(data)
 }
 
 const onCard = (subject_id: string) => {
